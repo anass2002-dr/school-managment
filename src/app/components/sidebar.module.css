@@ -1,3 +1,12 @@
 .menu{
     height: 95vh;
 }
+.menu_display{
+    flex-basis: 25%;
+    transition: 2s;
+
+}
+.menu_hide{
+    flex-basis: inherit;
+    transition: 2s;
+}

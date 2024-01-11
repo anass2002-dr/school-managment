@@ -20,9 +20,8 @@ export default function RootLayout({
       <body className={inter.className +" container"}>
         
         <div className="flex flex-row">
-          <div className="basis-1/4">
-              <SideBar/>
-          </div>
+        <SideBar/>
+              
           <div className="basis-3/4 m-2">
               {children}
           </div> 
