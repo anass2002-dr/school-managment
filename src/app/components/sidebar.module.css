@@ -3,10 +3,34 @@
 }
 .menu_display{
     flex-basis: 25%;
-    transition: 2s;
+    transition: flex-basis 2s;
 
 }
 .menu_hide{
     flex-basis: inherit;
-    transition: 2s;
+    transition: flex-basis 2s;
+}
+.test_animation{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s;
+}
+.test_animation_click{
+    width: 400px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s;
+
+}
+.sidebar{
+    width: 250px;
+    height: 95vh;
+    transition: width 1s;
+}
+.hide_sidebar{
+    width: 77px;
+    height: 95vh;
+    transition: width 1s;
+
 }
