@@ -2,13 +2,13 @@
     height: 95vh;
 }
 .menu_display{
-    flex-basis: 25%;
-    transition: flex-basis 2s;
+    width: 360px;
+    transition: width 0.5s;
 
 }
 .menu_hide{
-    flex-basis: inherit;
-    transition: flex-basis 2s;
+    width: 140px;
+    transition: width 0.5s;
 }
 .test_animation{
     width: 200px;

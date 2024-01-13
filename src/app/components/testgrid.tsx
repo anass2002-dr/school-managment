@@ -1,4 +1,7 @@
+import style from "@/app/components/sidebare/sidebar.module.css";
+
 export default function TestGrid(){
+
     return(
         <>
                 <div className="grid sm:grid-cols-2 gap-2 lg:grid-cols-5 md:grid-cols-3">
