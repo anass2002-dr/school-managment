@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import ListItem from "./list_item"
-import style from "@/app/components/sidebar.module.css";
+import style from "@/app/components/sidebare/sidebar.module.css";
+import ListItem from "./list_item";
 
 export default function SideBar(){
     const [display,setdisplay]=useState<boolean>(false)

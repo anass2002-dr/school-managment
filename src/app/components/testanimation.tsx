@@ -1,5 +1,6 @@
 "use client";
-import style from '@/app/components/sidebar.module.css'
+import style from "@/app/components/sidebare/sidebar.module.css";
+
 import { useState } from 'react'
 export default function TestAnimation(){
     const [animate,setanimate]=useState<boolean>(false)
