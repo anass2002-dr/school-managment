@@ -1,7 +1,9 @@
 
 "use client";
 import '@/app/components/navbar/navbar.css';
+import Link from 'next/link';
 import { useState } from 'react';
+import Message from './message';
 export default function Navbar(){
     const [displaychat,setdisplaychat]=useState<boolean>(false);
     return(
@@ -39,28 +41,34 @@ export default function Navbar(){
                 </ul>
             </div>
 
-            {displaychat ? <ul className={`bg-white shadow-lg m-2 p-2 rounded-lg chat absolute right-5 top-25`}>
-                <li className="flex space-x-4 m-2">
-                    <img
-                        className={`rounded-full w-8 h-8`}
-                            src="https://i.imgur.com/1bX5QH6.jpg"
-                            alt="Lin Lanying"
-                            width={"25%"}
-                            height={"25%"}
-                    /> 
-                    <span>Mohamed aiach</span>
-                </li>
-                <li className="flex space-x-4 m-2">
-                    <img
-                        className={`rounded-full w-8 h-8`}
-                            src="https://i.imgur.com/1bX5QH6.jpg"
-                            alt="Lin Lanying"
-                            width={"25%"}
-                            height={"25%"}
-                    /> 
-                    <span>Mohamed aiach</span>
-                </li>
-            </ul> : ""}
+            {displaychat ? 
+            
+            <ul className={`bg-white shadow-lg m-2 p-2 rounded-lg chat absolute right-5 top-25`}>
+                {/* <Link href={"#"} className='relative'>
+                    <li className="flex space-x-4 m-2">
+                        <img
+                            className={`rounded-full w-8 h-8`}
+                                src="https://i.imgur.com/1bX5QH6.jpg"
+                                alt="Lin Lanying"
+                                width={"25%"}
+                                height={"25%"}
+                        /> 
+                        <div>
+                            <p className='text-sm'>Mohamed zoubir</p>
+                            <p className='text-sm'>Hello anss today w..</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 absolute right-2 text-green-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </li>
+                </Link> */}
+
+                <Message name={"Mohamed zoubir"} message={"Hello anss today w.."} picture={"https://i.imgur.com/1bX5QH6.jpg"}/>
+                <Message name={"Ali jibot"} message={"anass can i .."} picture={"https://media.licdn.com/dms/image/D4E03AQEx6Xxv3pvtsQ/profile-displayphoto-shrink_800_800/0/1688942945053?e=2147483647&v=beta&t=5M1lt2VeKh1_150elKN4dMzBu1yS8gCWNPUfrsV5gZg"}/>
+                <Message name={"zaid bochlik"} message={"HAHAH yes we know.."} picture={"https://i.imgur.com/1bX5QH6.jpg"}/>
+            </ul> 
+            
+            : ""}
         </>
     )
 }
