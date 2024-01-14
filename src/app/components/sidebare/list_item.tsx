@@ -1,16 +1,14 @@
 import Link from "next/link";
 
-export default function ListItem({name,svg_name}:any){
+export default function ListItem({name,svg_name,url}:any){
     const name_v=name;
     const svg_v=svg_name;
+    const url_v=url;
     // const svg_name=parms.svg_name;
-    if(name_v){
-        console.log("hey")
-    }
-    console.log(name)
+
     return(
         <>
-        <Link href={"#"}>
+        <Link href={url_v}>
             <li className="p-3 flex relative text-lg hover:bg-gray-100 rounded-lg transition-all h-12">
                 {/* <span className={` ${name ? "" : "hidden"}`}>{name}</span>  */}
                 {name_v && <span>{name_v}</span>}
