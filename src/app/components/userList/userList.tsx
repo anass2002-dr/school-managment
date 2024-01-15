@@ -1,26 +1,97 @@
-export default function UserList({userlist}:any){
-    const v_userlist=userlist
+import UserItems from "./items"
+
+export default function UserList(){
+    const users=[
+        {
+            id:2654565,
+            name:"anass dermaj",
+            age:21,
+            level:"B",
+            class:"ts2"
+        },
+        {
+            id:211168,
+            name:"hamid batri",
+            age:17,
+            level:"f",
+            class:"ts10"
+        },
+        {
+          id:2654565,
+          name:"anass dermaj",
+          age:21,
+          level:"B",
+          class:"ts2"
+      },
+      {
+          id:211168,
+          name:"hamid batri",
+          age:17,
+          level:"f",
+          class:"ts10"
+      },
+      {
+        id:2654565,
+        name:"anass dermaj",
+        age:21,
+        level:"B",
+        class:"ts2"
+    },
+    {
+        id:211168,
+        name:"hamid batri",
+        age:17,
+        level:"f",
+        class:"ts10"
+    },
+    {
+      id:2654565,
+      name:"anass dermaj",
+      age:21,
+      level:"B",
+      class:"ts2"
+    },
+    {
+      id:211168,
+      name:"hamid batri",
+      age:17,
+      level:"f",
+      class:"ts10"
+    },
+    ]
     // console.log(v_userlist)
     return(
-        <tr className="bg-white border-b hover:bg-gray-50">
-            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap " key={v_userlist.id}>
-                {v_userlist.id}
-            </th>
-            <td className="px-6 py-4" key={v_userlist.name}>
-                {v_userlist.name}
-            </td>
-            <td className="px-6 py-4" key={v_userlist.age}>
-                {v_userlist.age}
-            </td>
-            <td className="px-6 py-4" key={v_userlist.level}>
-                {v_userlist.level}
-            </td>
-            <td className="px-6 py-4" key={v_userlist.class}>
-                {v_userlist.class}
-            </td>
-            <td className="px-6 py-4 text-right">
-                <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a>
-            </td>
-        </tr>
+        <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
+        <thead className="text-xs text-gray-700  uppercase rounded-lg bg-gray-100">
+            <tr>
+                <th scope="col" className="px-6 py-3">
+                    Student ID
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Student name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Age
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Level
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Class
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    <span className="sr-only">Edit</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody className="uppercase">
+            {
+                users.map((user)=>
+                <UserItems userlist={user} key={user.id}/>
+                )
+            }
+            
+        </tbody>
+    </table>
     )
 }
