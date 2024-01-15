@@ -7,8 +7,9 @@ import Message from './message';
 import { delay, motion } from 'framer-motion';
 export default function Navbar(){
     const [displaychat,setdisplaychat]=useState<boolean>(false);
-    const body=document.getElementById('body')
     useEffect(()=>{
+        const body=document.getElementById('body')
+
         displaychat && (body?.addEventListener('click',()=>{
             setdisplaychat(false);
         }))
