@@ -1,7 +1,20 @@
 export default function UserItems({userlist}:any){
     const v_userlist=userlist
-    // console.log(v_userlist)
+    
     return(
+
+    <>
+           {/* {v_userlist.map((obj:any)=>{
+            const key=Object.keys(obj)
+            const objLength=Object.keys(obj).length
+            for(var i=0 ;i<=objLength;i++){
+                <td className="px-6 py-4" key={v_userlist.name}>
+                    {obj.key[i]}
+                </td>
+            }
+        })} */}
+     
+
         <tr className="bg-white border-b hover:bg-gray-50">
             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap " key={v_userlist.id}>
                 {v_userlist.id}
@@ -22,5 +35,6 @@ export default function UserItems({userlist}:any){
                 <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a>
             </td>
         </tr>
+    </>
     )
 }

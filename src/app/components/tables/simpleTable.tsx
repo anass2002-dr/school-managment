@@ -1,6 +1,9 @@
+import { ReactElement } from "react"
+import UserItems from "../userList/items"
+
 export default function SimpleTable({thead,data}:any){
     const v_thead:string[]=thead
-    const v_data:string[]=data
+    const v_data:React.ReactElement=data
     return(
         <>
         <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
@@ -20,7 +23,7 @@ export default function SimpleTable({thead,data}:any){
             </thead>
             <tbody className="uppercase">
                 
-                
+                <UserItems />
             </tbody>
         </table>
         </>

@@ -1,3 +1,4 @@
+import SimpleTable from "../tables/simpleTable"
 import UserItems from "./items"
 
 export default function UserList(){
@@ -59,39 +60,47 @@ export default function UserList(){
       class:"ts10"
     },
     ]
+    const thead=['Student id','student Name','Age','Level','Class','op']
     // console.log(v_userlist)
     return(
-        <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
-        <thead className="text-xs text-gray-700  uppercase rounded-lg bg-gray-100">
-            <tr>
-                <th scope="col" className="px-6 py-3">
-                    Student ID
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Student name
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Age
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Level
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Class
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    <span className="sr-only">Edit</span>
-                </th>
-            </tr>
-        </thead>
-        <tbody className="uppercase">
-            {
-                users.map((user)=>
-                <UserItems userlist={user} key={user.id}/>
-                )
-            }
+    //     <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
+    //     <thead className="text-xs text-gray-700  uppercase rounded-lg bg-gray-100">
+    //         <tr>
+    //             <th scope="col" className="px-6 py-3">
+    //                 Student ID
+    //             </th>
+    //             <th scope="col" className="px-6 py-3">
+    //                 Student name
+    //             </th>
+    //             <th scope="col" className="px-6 py-3">
+    //                 Age
+    //             </th>
+    //             <th scope="col" className="px-6 py-3">
+    //                 Level
+    //             </th>
+    //             <th scope="col" className="px-6 py-3">
+    //                 Class
+    //             </th>
+    //             <th scope="col" className="px-6 py-3">
+    //                 <span className="sr-only">Edit</span>
+    //             </th>
+    //         </tr>
+    //     </thead>
+    //     <tbody className="uppercase">
+    //         {
+    //             users.map((user)=>
+    //             <UserItems userlist={user} key={user.id}/>
+    //             )
+    //         }
             
-        </tbody>
-    </table>
+    //     </tbody>
+    // </table>
+        <SimpleTable thead={thead} data={
+            users.map((user)=>
+            <UserItems userlist={user} key={user.id}/>
+            )
+        }/>
+
+
     )
 }
