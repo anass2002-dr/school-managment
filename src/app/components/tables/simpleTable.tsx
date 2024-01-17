@@ -3,7 +3,7 @@ import UserItems from "../userList/items"
 
 export default function SimpleTable({thead,data}:any){
     const v_thead:string[]=thead
-    const v_data:React.ReactElement=data
+    const v_data:Array<string[]>=data
     return(
         <>
         <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
@@ -22,10 +22,26 @@ export default function SimpleTable({thead,data}:any){
                 </tr>
             </thead>
             <tbody className="uppercase">
-                
-                <UserItems />
+                {v_data.map((obj, index) => (
+                    <tr key={index} className="bg-white border-b hover:bg-gray-50">
+                    {obj.map((item, i) => (
+                        <th key={i} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        {item}
+                        </th>
+                    ))}
+                    { }
+                    </tr>
+                ))}
             </tbody>
+
         </table>
+        {/* <p>{v_data.map((obj)=>
+            
+                obj[1]
+                
+                )
+            }
+    </p> */}
         </>
     )
 }

@@ -60,6 +60,19 @@ export default function UserList(){
       class:"ts10"
     },
     ]
+    const listUser:string[]=[]
+    const arr_user:Array<string[]>=new Array<string[]>()
+    users.map((obj)=>{
+        const list:Array<string>=new Array<string>()
+        list.push(String(obj.id))
+        list.push(String(obj.name))
+        list.push(String(obj.age))
+        list.push(String(obj.level))
+        list.push(String(obj.class))
+        arr_user.push(list)
+
+        // listUser.push.apply(list)
+    })
     const thead=['Student id','student Name','Age','Level','Class','op']
     // console.log(v_userlist)
     return(
@@ -95,12 +108,14 @@ export default function UserList(){
             
     //     </tbody>
     // </table>
-        <SimpleTable thead={thead} data={
-            users.map((user)=>
-            <UserItems userlist={user} key={user.id}/>
-            )
-        }/>
+
+      <>  
+        {/* <div>
+            <p>{arr_user.map((obj)=>obj)}</p>
+        </div> */}
+        <SimpleTable thead={thead} data={arr_user}/>
 
 
+        </>
     )
 }
