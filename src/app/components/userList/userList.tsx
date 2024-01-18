@@ -1,8 +1,7 @@
 import SimpleTable from "../tables/simpleTable"
-import UserItems from "./items"
-
+import users from "@/app/api/student.json"
 export default function UserList(){
-    const users=[
+    const v_users=[
         {
             id:2654565,
             name:"anass dermaj",
@@ -73,49 +72,11 @@ export default function UserList(){
 
         // listUser.push.apply(list)
     })
-    const thead=['Student id','student Name','Age','Level','Class','op']
+    const thead=['Student id','student Name','Age','Level','Class']
     // console.log(v_userlist)
     return(
-    //     <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
-    //     <thead className="text-xs text-gray-700  uppercase rounded-lg bg-gray-100">
-    //         <tr>
-    //             <th scope="col" className="px-6 py-3">
-    //                 Student ID
-    //             </th>
-    //             <th scope="col" className="px-6 py-3">
-    //                 Student name
-    //             </th>
-    //             <th scope="col" className="px-6 py-3">
-    //                 Age
-    //             </th>
-    //             <th scope="col" className="px-6 py-3">
-    //                 Level
-    //             </th>
-    //             <th scope="col" className="px-6 py-3">
-    //                 Class
-    //             </th>
-    //             <th scope="col" className="px-6 py-3">
-    //                 <span className="sr-only">Edit</span>
-    //             </th>
-    //         </tr>
-    //     </thead>
-    //     <tbody className="uppercase">
-    //         {
-    //             users.map((user)=>
-    //             <UserItems userlist={user} key={user.id}/>
-    //             )
-    //         }
-            
-    //     </tbody>
-    // </table>
+    
+        <SimpleTable thead={thead} data={arr_user} edit={true} remove={true}/>
 
-      <>  
-        {/* <div>
-            <p>{arr_user.map((obj)=>obj)}</p>
-        </div> */}
-        <SimpleTable thead={thead} data={arr_user}/>
-
-
-        </>
     )
 }

@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "**/*.jsx"
-  ],
+, "src/app/components/test/testjson.js"  ],
   "exclude": [
     "node_modules"
   ]

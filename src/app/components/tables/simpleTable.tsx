@@ -1,9 +1,29 @@
+import Link from "next/link"
 import { ReactElement } from "react"
-import UserItems from "../userList/items"
 
-export default function SimpleTable({thead,data}:any){
+
+
+function items(dt:string[],ed:boolean){
+    const v_ed=ed
+
+    return (
+        <>
+            {dt.map((item, i) => (
+            <th key={i} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                {item}
+            </th>
+            
+            ))}
+           {ed==true ?<th><Link href={"#"}>edit</Link></th> :''}
+        </>
+    )
+}
+export default function SimpleTable({thead,data,edit,remove}:any){
     const v_thead:string[]=thead
     const v_data:Array<string[]>=data
+    const v_edit=edit
+    const v_delete=remove
+
     return(
         <>
         <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
@@ -13,35 +33,35 @@ export default function SimpleTable({thead,data}:any){
                     v_thead.map((th)=>
                         (
                             <th scope="col" className="px-6 py-3">
-                            {th}
-                        </th>
+                                {th}
+                            </th>
                         )
                     )
                     }
+                    <th scope="col" colSpan={3} className="px-6 py-3"></th>
                    
                 </tr>
             </thead>
             <tbody className="uppercase">
                 {v_data.map((obj, index) => (
+                    
+
                     <tr key={index} className="bg-white border-b hover:bg-gray-50">
-                    {obj.map((item, i) => (
+                        {obj.map((item, i) => (
                         <th key={i} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {item}
+                            {item}
                         </th>
-                    ))}
-                    { }
+                        
+                        ))}
+                        {v_edit==true ?<th><Link href={"#"} className="text-green-500">Edit</Link></th> :''}
+                        {v_delete==true ?<th><Link href={"#"} className="text-red-500">Delete</Link></th> :''}                 
+                    
                     </tr>
                 ))}
             </tbody>
 
         </table>
-        {/* <p>{v_data.map((obj)=>
-            
-                obj[1]
-                
-                )
-            }
-    </p> */}
+        
         </>
     )
 }
