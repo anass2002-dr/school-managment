@@ -8,17 +8,32 @@ import ClassList from './components/classList/classList'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
-  const [backdata,setbackdata]=useState<any>("loading");
-  useEffect(()=>{
-      const resp=fetch('http://localhost:8080/api').then(
+  const [backdata,setbackdata]=useState<any>();
+  async function loadingdt() {
+      await fetch('http://localhost:8080/api').then(
         response=>response.json()
       ).then(
         data=>{
-          console.log(data)
           setbackdata(data)
+          data.users_l.map((obj:any)=>{
+            console.log(obj.message)
+          })
+
         }
       )
-  },[])
+  }
+    useEffect(()=>{
+        fetch('http://localhost:8080/api').then(
+          response=>response.json()
+        ).then(
+          data=>{
+            setbackdata(data)
+            console.log(backdata)
+
+          }
+        )
+
+    },[])
   return (
     <>
       <div className="flex space-x-4">
@@ -30,7 +45,17 @@ export default function Home() {
           </div>
           
       </div>
-      {/* <p>{typeof(backdata)}</p> */}
+      <button onClick={loadingdt} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5'>fetch data</button>
+      <p>{
+          backdata ?
+          (backdata.users_l.map((obj:any)=>
+            obj.message
+          )) : ("data is loadinggg .....")
+
+        }
+        
+        
+        </p>
     </>
   )
 }
