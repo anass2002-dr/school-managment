@@ -1,13 +1,13 @@
 "use client"
 import Image from 'next/image'
-import TestGrid from './components/testgrid'
-import TestAnimation from './components/testanimation'
-import UserList from './components/userList/userList'
-import TestJson from './components/test/testjson'
-import ClassList from './components/classList/classList'
+import TestGrid from '../components/testgrid'
+import TestAnimation from '../components/testanimation'
+import UserList from '../components/userList/userList'
+import TestJson from '../components/test/testjson'
+import ClassList from '../components/classList/classList'
 import { useEffect, useState } from 'react'
 
-export default function Home() {
+export default function Students() {
   const [backdata,setbackdata]=useState<any>();
   async function loadingdt() {
       await fetch('http://localhost:8080/api').then(

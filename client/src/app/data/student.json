@@ -1,59 +1,17 @@
 [
     {
-      "id": 2654565,
-      "name": "anass dermaj",
+      
+      "student_name": "anass dermaj",
       "age": 21,
       "level": "B",
-      "class": "ts2"
+      "classroom": "ts2"
     },
     {
-      "id": 211168,
-      "name": "hamid batri",
+      "student_name": "hamid batri",
       "age": 17,
       "level": "f",
-      "class": "ts10"
-    },
-    {
-      "id": 2654565,
-      "name": "anass dermaj",
-      "age": 21,
-      "level": "B",
-      "class": "ts2"
-    },
-    {
-      "id": 211168,
-      "name": "hamid batri",
-      "age": 17,
-      "level": "f",
-      "class": "ts10"
-    },
-    {
-      "id": 2654565,
-      "name": "anass dermaj",
-      "age": 21,
-      "level": "B",
-      "class": "ts2"
-    },
-    {
-      "id": 211168,
-      "name": "hamid batri",
-      "age": 17,
-      "level": "f",
-      "class": "ts10"
-    },
-    {
-      "id": 2654565,
-      "name": "anass dermaj",
-      "age": 21,
-      "level": "B",
-      "class": "ts2"
-    },
-    {
-      "id": 211168,
-      "name": "hamid batri",
-      "age": 17,
-      "level": "f",
-      "class": "ts10"
+      "classroom": "ts10"
     }
+    
   
   ]
