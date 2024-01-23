@@ -23,7 +23,7 @@ export default function SimpleTable({thead,data,edit,remove}:any){
     const v_data:Array<string[]>=data
     const v_edit=edit
     const v_delete=remove
-
+    {data ? data.map((obj:any)=>console.log(obj.student_name)) : console.log('loading...')}
     return(
         <>
         <table className="w-full text-sm text-left rtl:text-right bg-white text-gray-500 p-3">
@@ -43,21 +43,44 @@ export default function SimpleTable({thead,data,edit,remove}:any){
                 </tr>
             </thead>
             <tbody className="uppercase">
-                {v_data.map((obj, index) => (
+
+                    {
+                        v_data ?
+                        v_data.map((obj:any)=>(
+                            <tr className="bg-white border-b hover:bg-gray-50">
+                                {
+                                   obj ? obj.map((ob:any)=>(
+                                        <>
+                                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{ob._id}</td>
+                                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{ob.student_name}</td>
+                                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{ob.age}</td>
+                                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{ob.level}</td>
+                                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{ob.classroom}</td>
+                                        </>
+                                    ))
+                                    :""
+                                }
+                            </tr>
+                        ))
+                        :""
+                    }
+
+
+                {/* {v_data ? v_data.map((obj, index) => (
                     
 
                     <tr key={index} className="bg-white border-b hover:bg-gray-50">
-                        {obj.map((item, i) => (
+                        {obj ? obj.map((item, i) => (
                         <th key={i} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {item}
                         </th>
                         
-                        ))}
+                        )) :""}
                         {v_edit==true ?<th><Link href={"#"} className="text-green-500">Edit</Link></th> :''}
                         {v_delete==true ?<th><Link href={"#"} className="text-red-500">Delete</Link></th> :''}                 
                     
                     </tr>
-                ))}
+                )) : ""} */}
             </tbody>
 
         </table>
